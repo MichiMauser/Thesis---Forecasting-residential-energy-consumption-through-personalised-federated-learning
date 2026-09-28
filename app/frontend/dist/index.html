@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>London Smart Meters — FL Dashboard</title>
+    <!-- Set the theme before first paint so there's no flash of the wrong mode. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light" : "dark";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BtpO1-Un.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cd-EUCHe.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

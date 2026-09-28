@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "smartmeter-fl"
+version = "1.0.0"
+dependencies = ["flwr>=2.0.0", "torch", "numpy", "pandas", "scikit-learn"]
+
+[tool.flwr.app]
+publisher = "smartmeter"
+
+[tool.flwr.app.components]
+serverapp = "flower_server:app"
+clientapp = "flower_client:app"
+
+[tool.flwr.app.config]
+method          = "perfedavg"
+mu              = 0.1
+device          = "cpu"
+num-rounds      = 20
+local-epochs    = 5
+finetune-epochs = 10
+min-clients     = 5
+out-dir         = "outputs/flower"
+run-id          = ""
+data-dir        = "halfhourly_dataset"
+info-csv        = "informations_households.csv"
+weather-csv     = "weather_hourly_darksky.csv"
+seed            = 42
+
+# address = SuperLink's ServerApp API port (default 9093)
+
+
+# [tool.flwr.federations]
+# default = "local-deployment"
+
+# [tool.flwr.federations.local-deployment]
+# address  = "127.0.0.1:9093"
+# insecure = true

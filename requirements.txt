@@ -1,0 +1,12 @@
+# Smart Meter FL app — Python runtime dependencies.
+# GPU: install torch from the CUDA index instead (see pytorch.org).
+torch
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+holidays
+flwr>=1.29
+fastapi>=0.110
+uvicorn[standard]>=0.27

@@ -1,0 +1,4 @@
+# Backend deps for the FL dashboard (install into the FL venv).
+# pandas / numpy / torch / flwr already present from the FL pipeline.
+fastapi>=0.110
+uvicorn[standard]>=0.27
